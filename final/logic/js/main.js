@@ -83,4 +83,43 @@ function(){
         }
     }
 
+/*проверка наличия формы на странице*/
+    if (document.forms.newMovie){ //если присутствует
+        document.forms.newMovie.addEventListener('submit', addNewMovie);
+            //Обработчик addNewMovie на событие submit
+        function addNewMovie(event){
+            event.preventDefault();
+
+            var formData = new FormData(this); //отправка формы
+
+            doAjax({
+                method: 'POST',
+                url: 'logic/add_movie.php',
+                data: formData,
+                callback: function(response){
+                    alert(response);
+                }
+
+
+
+            });
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 });

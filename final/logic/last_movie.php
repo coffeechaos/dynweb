@@ -5,7 +5,9 @@ require_once 'db.php';
 $sql = 'SELECT id, title FROM movies ORDER BY id DESC
 LIMIT 1'; // сортировка результата по id в порядке убывания ORDER BY, DESC
 
-$result = $pdo->query($sql); // запрос
+$result = $pdo->query($sql); // запрос, метод query; так как не передаются переменные, используется метод query, а результат помещен в переменную $result
+/*$result = $pdo->query($sql); - оригинальный код запроса, не работает*/
+
 $movie = $result->fetch(PDO::FETCH_OBJ); // извлекаем результат
 ?>
 

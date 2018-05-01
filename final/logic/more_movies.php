@@ -7,6 +7,8 @@ $sql = 'SELECT id, title FROM movies ORDER BY id DESC
 LIMIT :lastShown, 1'; // сортировка результата по id в порядке убывания ORDER BY, DESC
 
 $stmt = $pdo->prepare($sql); // запрос
+/*$stmt = $pdo->prepare($sql);  - оригинальный код запроса, не работает, 'SELECT * FROM movies' - working*/
+
 
 /*$stmt->execute([$offset]); //можно передать только числа //выполнить*/
 

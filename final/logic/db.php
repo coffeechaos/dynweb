@@ -1,5 +1,5 @@
 <?php
-
+/*$prefix = 'dr_';*/
 $driver = 'mysql';
 $host = 'localhost';
 $db_name = 'dynweb';
