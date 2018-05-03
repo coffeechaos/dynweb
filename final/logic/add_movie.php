@@ -24,7 +24,7 @@ try{ // блок для работы с транзакциями
     VALUES(:title, :duration)';
     $params = [
         ':title' => $movie_title,
-        ':duration' => $movie_duration
+        ':duration' => $movie_duration,
     ];
 
 #Получение id фильма для дальнейших действий

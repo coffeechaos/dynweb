@@ -41,6 +41,43 @@ function(){
 
                 });
             }
+
+            if(event.target.classList.contains('movie__del') ){
+                event.preventDefault();
+
+                var movie= {};
+                movie.container = event.target.parentNode;
+                movie.id = movie.container.getAttribute('data-movie-id');
+                movie.title = movie.container.firstElementChild.textContent;
+
+                doAjax({
+                    method: 'POST',
+                    url: 'logic/del_movie.php',
+                    data: 'del_id=' + movie.id,
+                    contentType:
+                    'application/x-www-form-urlencoded',
+                    callback: delMovie
+
+                });
+
+                function delMovie(response){
+                    if (response){
+                        alert('Фильм ' + movie.title + ' был успешно удален!');
+                        movie.container.nextElementSibling.remove()
+                        // удалить горизонтальную линию
+                        movie.container.remove()
+                    }else{
+                        alert('Во время удаления файла что-то пошло не так');
+                    }
+
+                }
+
+
+            }
+
+
+
+
         }
     }
 

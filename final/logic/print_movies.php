@@ -41,6 +41,7 @@ while( $movie = $result->fetch(PDO::FETCH_OBJ) ): //цикл while при каж
         <?php else: ?>
         <button class="movie__watched">Не смотрел</button>
         <?php endif; ?>
+        <button type="button" class="movie__del">Удалить</button>
     </div>
     <hr> <!--разделитель блоков-->
 <?php endwhile; ?>
